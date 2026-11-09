@@ -1,0 +1,281 @@
+{
+  "about": "Illustrative problem bodies of RD05-Y (application/problem+json, RFC 9457). Placeholder values only; no endpoint is implemented.",
+  "problems": {
+    "invalid-request": {
+      "type": "https://example.net/problems/invalid-request",
+      "title": "Invalid request",
+      "status": 400,
+      "detail": "The request is malformed or a required header is missing.",
+      "reference": "R-8DD9A1"
+    },
+    "idempotency-key-required": {
+      "type": "https://example.net/problems/idempotency-key-required",
+      "title": "Idempotency key required",
+      "status": 400,
+      "detail": "This operation needs an Idempotency-Key header.",
+      "reference": "R-225C50"
+    },
+    "session-expired": {
+      "type": "https://example.net/problems/session-expired",
+      "title": "Session expired",
+      "status": 401,
+      "detail": "The session has ended. Sign in again.",
+      "reference": "R-8C44B0"
+    },
+    "credentials-invalid": {
+      "type": "https://example.net/problems/credentials-invalid",
+      "title": "Credentials invalid",
+      "status": 401,
+      "detail": "The email or password is incorrect.",
+      "reference": "R-51B24F"
+    },
+    "access-denied": {
+      "type": "https://example.net/problems/access-denied",
+      "title": "Access denied",
+      "status": 403,
+      "detail": "The account has no access to this area.",
+      "reference": "R-27AF05",
+      "reason": "wrong-role",
+      "useRole": "recruiter"
+    },
+    "consent-required": {
+      "type": "https://example.net/problems/consent-required",
+      "title": "Consent required",
+      "status": 403,
+      "detail": "The consent module is not granted.",
+      "reference": "R-D3EA66",
+      "module": "CM-01",
+      "consentStatus": "NOT_ASKED"
+    },
+    "not-available": {
+      "type": "https://example.net/problems/not-available",
+      "title": "Not available",
+      "status": 404,
+      "detail": "The resource is missing, expired or outside your scope.",
+      "reference": "R-073F44"
+    },
+    "job-closed": {
+      "type": "https://example.net/problems/job-closed",
+      "title": "Job closed",
+      "status": 409,
+      "detail": "The job no longer accepts applications.",
+      "reference": "R-8F68AB"
+    },
+    "job-version-changed": {
+      "type": "https://example.net/problems/job-version-changed",
+      "title": "Job version changed",
+      "status": 409,
+      "detail": "A newer job version has been published.",
+      "reference": "R-338E9C",
+      "boundJobVersion": 2,
+      "currentJobVersion": 3
+    },
+    "notice-version-changed": {
+      "type": "https://example.net/problems/notice-version-changed",
+      "title": "Notice version changed",
+      "status": 409,
+      "detail": "The consent notice changed. Read it and decide again.",
+      "reference": "R-64EDF0",
+      "module": "CM-01",
+      "currentNoticeVersion": 4
+    },
+    "resume-not-ready": {
+      "type": "https://example.net/problems/resume-not-ready",
+      "title": "CV not ready",
+      "status": 409,
+      "detail": "The resume version is not Ready.",
+      "reference": "R-68573E",
+      "processingState": "PROCESSING"
+    },
+    "submission-blocked": {
+      "type": "https://example.net/problems/submission-blocked",
+      "title": "Submission blocked",
+      "status": 409,
+      "detail": "The application cannot be submitted yet.",
+      "reference": "R-7157C5",
+      "reasons": [
+        "resume-not-ready",
+        "consent-cm01-missing"
+      ]
+    },
+    "session-closed": {
+      "type": "https://example.net/problems/session-closed",
+      "title": "Session closed",
+      "status": 409,
+      "detail": "The interview session is closed.",
+      "reference": "R-35B989",
+      "closedBecause": "CANCELLED_BY_RECRUITER"
+    },
+    "already-submitted": {
+      "type": "https://example.net/problems/already-submitted",
+      "title": "Already submitted",
+      "status": 409,
+      "detail": "These answers were already submitted and cannot be changed.",
+      "reference": "R-C905AC",
+      "submittedAt": "2026-11-05T10:50:00Z"
+    },
+    "invalid-state": {
+      "type": "https://example.net/problems/invalid-state",
+      "title": "Invalid state",
+      "status": 409,
+      "detail": "The operation is not allowed in the current status.",
+      "reference": "R-0AB45F",
+      "currentStatus": "ACTIVE"
+    },
+    "draft-incomplete": {
+      "type": "https://example.net/problems/draft-incomplete",
+      "title": "Draft incomplete",
+      "status": 409,
+      "detail": "The job draft cannot be reviewed or published yet.",
+      "reference": "R-66DF2D",
+      "errors": [
+        {
+          "pointer": "#/title",
+          "reason": "required"
+        },
+        {
+          "pointer": "#/requirements",
+          "reason": "min-items"
+        }
+      ]
+    },
+    "last-admin": {
+      "type": "https://example.net/problems/last-admin",
+      "title": "Last Admin",
+      "status": 409,
+      "detail": "The organization must keep at least one Admin.",
+      "reference": "R-C14F33"
+    },
+    "invitation-expired": {
+      "type": "https://example.net/problems/invitation-expired",
+      "title": "Invitation expired",
+      "status": 409,
+      "detail": "The invitation has expired. Ask for a new one.",
+      "reference": "R-EB101D"
+    },
+    "request-closed": {
+      "type": "https://example.net/problems/request-closed",
+      "title": "Request closed",
+      "status": 409,
+      "detail": "The data request is closed.",
+      "reference": "R-6BA03A",
+      "currentStatus": "CANCELLED"
+    },
+    "confirmation-required": {
+      "type": "https://example.net/problems/confirmation-required",
+      "title": "Confirmation required",
+      "status": 409,
+      "detail": "Confirm the stated consequences and repeat the request.",
+      "reference": "R-197519",
+      "activeApplications": 1
+    },
+    "request-in-progress": {
+      "type": "https://example.net/problems/request-in-progress",
+      "title": "Request in progress",
+      "status": 409,
+      "detail": "A request with this Idempotency-Key is still being processed.",
+      "reference": "R-3D2834"
+    },
+    "version-mismatch": {
+      "type": "https://example.net/problems/version-mismatch",
+      "title": "Version mismatch",
+      "status": 412,
+      "detail": "The resource changed since it was read.",
+      "reference": "R-EF644E",
+      "currentVersion": "\"draft-3\""
+    },
+    "file-too-large": {
+      "type": "https://example.net/problems/file-too-large",
+      "title": "File too large",
+      "status": 413,
+      "detail": "The file is larger than the limit. Nothing was uploaded.",
+      "reference": "R-D6F4BC",
+      "limitBytes": 5242880,
+      "actualBytes": 7340032
+    },
+    "file-type-unsupported": {
+      "type": "https://example.net/problems/file-type-unsupported",
+      "title": "File type not supported",
+      "status": 415,
+      "detail": "Only PDF files are accepted.",
+      "reference": "R-55C082",
+      "accepted": [
+        "application/pdf"
+      ]
+    },
+    "pdf-too-many-pages": {
+      "type": "https://example.net/problems/pdf-too-many-pages",
+      "title": "Too many pages",
+      "status": 422,
+      "detail": "The PDF has more pages than the limit. Nothing was uploaded.",
+      "reference": "R-26AFFB",
+      "limitPages": 5,
+      "actualPages": 8
+    },
+    "text-too-long": {
+      "type": "https://example.net/problems/text-too-long",
+      "title": "Extracted text too long",
+      "status": 422,
+      "detail": "The extracted text exceeds the limit. Nothing was uploaded.",
+      "reference": "R-1D920B",
+      "limitCharacters": 20000,
+      "actualCharacters": 31500
+    },
+    "pdf-scanned": {
+      "type": "https://example.net/problems/pdf-scanned",
+      "title": "Scanned PDF not supported",
+      "status": 422,
+      "detail": "Scanned or image-only PDFs are not supported yet.",
+      "reference": "R-CAA498"
+    },
+    "span-invalid": {
+      "type": "https://example.net/problems/span-invalid",
+      "title": "Selected text does not match",
+      "status": 422,
+      "detail": "The selected span does not match the CV text.",
+      "reference": "R-6BD349"
+    },
+    "validation-failed": {
+      "type": "https://example.net/problems/validation-failed",
+      "title": "Validation failed",
+      "status": 422,
+      "detail": "One or more fields are invalid.",
+      "reference": "R-56F19F",
+      "errors": [
+        {
+          "pointer": "#/email",
+          "reason": "format"
+        }
+      ]
+    },
+    "idempotency-key-reused": {
+      "type": "https://example.net/problems/idempotency-key-reused",
+      "title": "Idempotency key reused",
+      "status": 422,
+      "detail": "This Idempotency-Key was used with a different request.",
+      "reference": "R-C02E39"
+    },
+    "precondition-required": {
+      "type": "https://example.net/problems/precondition-required",
+      "title": "Precondition required",
+      "status": 428,
+      "detail": "Send If-Match with the version you read.",
+      "reference": "R-757318"
+    },
+    "too-many-attempts": {
+      "type": "https://example.net/problems/too-many-attempts",
+      "title": "Too many attempts",
+      "status": 429,
+      "detail": "Too many attempts. Try again later.",
+      "reference": "R-B6B1DB",
+      "retryAfterSeconds": 900
+    },
+    "service-unavailable": {
+      "type": "https://example.net/problems/service-unavailable",
+      "title": "Service unavailable",
+      "status": 503,
+      "detail": "A temporary problem on our side. Nothing was changed.",
+      "reference": "R-AEF71F"
+    }
+  }
+}
